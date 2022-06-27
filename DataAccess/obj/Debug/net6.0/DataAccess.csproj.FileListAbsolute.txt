@@ -33,3 +33,4 @@ D:\fpt\cn5\.net\assignment\F-Store\DataAccess\obj\Debug\net6.0\refint\DataAccess
 D:\fpt\cn5\.net\assignment\F-Store\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\fpt\cn5\.net\assignment\F-Store\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
 D:\fpt\cn5\.net\assignment\F-Store\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+D:\fpt\cn5\.net\assignment\F-Store\DataAccess\bin\Debug\net6.0\appsettings.json

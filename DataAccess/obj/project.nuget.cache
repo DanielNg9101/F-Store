@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F0LUVh3s8I1xgxnwb/ruPP0JL3KMPzHKd+amqUne0YwxeD1YoiXIx288S6LqTe9MzkeNJXFRy1spoEBYHd3KVA==",
+  "dgSpecHash": "N0bPt0iGaqgmLS80UO5p8yZYqCBNcHpKflod2/EOW3rMQwiPKEyvPYgQ/XOH0trX0V5SWNg9p5wJJL3Yd/Vj7w==",
   "success": true,
   "projectFilePath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.0\\microsoft.extensions.configuration.fileextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.json\\6.0.0\\microsoft.extensions.configuration.json.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

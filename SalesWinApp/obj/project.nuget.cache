@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FilMl+NU1Y8Ao0R/0paO2CB0elYzvZHMo8MS1zOAas8ergw+82hibF8EJtOxygdO+QonKMYTpyz5Urlng79+XQ==",
+  "dgSpecHash": "591SnTWiLqheFimodVaHTDXtrN8UZCCDRXcDpkVGYUuMLnQ9IRH2kBu4czs8cFo6NjzlWh/vYQKLniZEsqaEkQ==",
   "success": true,
   "projectFilePath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\SalesWinApp\\SalesWinApp.csproj",
   "expectedPackageFiles": [
@@ -18,6 +18,7 @@
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.0\\microsoft.extensions.configuration.fileextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.configuration.json\\6.0.0\\microsoft.extensions.configuration.json.6.0.0.nupkg.sha512",
     "C:\\Users\\dacng\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
