@@ -1,8 +1,6 @@
 ﻿using BusinessObject;
-using DataAccess.AppConfig;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 
 namespace DataAccess.Contexts;
 public class ApplicationDbContext : DbContext
@@ -15,11 +13,20 @@ public class ApplicationDbContext : DbContext
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
         IConfigurationRoot configuration = builder.Build();
-        optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+        var connectionString = configuration.GetSection("AppSettings:ConnectionStrings");
+        optionsBuilder.UseSqlServer(connectionString["DefaultConnection"]);
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<OrderDetailObject>()
+            .HasKey(nameof(OrderDetailObject.OrderId), nameof(OrderDetailObject.ProductId));
+        base.OnModelCreating(modelBuilder);
     }
 
     public DbSet<MemberObject> Members { get; set; }
     public DbSet<OrderObject> Orders { get; set; }
     public DbSet<OrderDetailObject> OrderDetails { get; set; }
     public DbSet<ProductObject> Products { get; set; }
+
 }

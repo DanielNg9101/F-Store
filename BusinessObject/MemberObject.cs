@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessObject;
 public class MemberObject
 {
-    [Required]
+    [Key,Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int MemberId { get; set; }
     [Required, MaxLength(100)]
     public string Email { get; set; }

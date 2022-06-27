@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BusinessObject;
 public class OrderObject
 {
-    [Required]
+    [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int OrderId { get; set; }
     [Required]
     public int MemberId { get; set; }
