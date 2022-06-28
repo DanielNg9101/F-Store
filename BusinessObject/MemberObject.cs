@@ -10,10 +10,10 @@ public class MemberObject
     public string Email { get; set; }
     [Required, MaxLength(40)]
     public string CompanyName { get; set; }
-    [Required, MinLength(3), MaxLength(15)]
+    [Required, MaxLength(15)]
     public string City { get; set; }
-    [Required, MinLength(3), MaxLength(15)]
+    [Required, MaxLength(15)]
     public string Country { get; set; }
-    [Required, MinLength(3), MaxLength(30)]
+    [Required, MaxLength(30)]
     public string Password { get; set; }
 }

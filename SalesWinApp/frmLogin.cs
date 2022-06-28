@@ -17,13 +17,15 @@ public partial class frmLogin : Form
 
     private void frmLogin_Load(object sender, EventArgs e)
     {
-        txtEmail.Select();
         txtPassword.PasswordChar = PASSWORD_CHAR;
     }
 
     private async void btnLogin_Click(object sender, EventArgs e)
     {
-        if (!ValidateChildren(ValidationConstraints.Enabled)) return;
+        if (!txtEmail.txtbox_Validating(lbEmail, errorEmailProvider) 
+            ||
+            !txtPassword.txtbox_Validating(lbPassword, errorPasswordProvider))
+            return;
 
         if (txtEmail.Text.Equals(Admin.Email) && txtPassword.Text.Equals(Admin.Password))
         {
@@ -35,6 +37,7 @@ public partial class frmLogin : Form
         if (user is null)
         {
             MessageBox.Show("Account not found");
+            return;
         }
         MessageBox.Show($"Welcome {user.Email}");
         Hide();
@@ -42,17 +45,24 @@ public partial class frmLogin : Form
 
     private void btnRegister_Click(object sender, EventArgs e)
     {
-        frmMembers frmMembers = new frmMembers();
-        frmMembers.Show();
+        frmContainer mdiParent = (frmContainer)MdiParent;
+        mdiParent.frmMembers.ClearText();
+        mdiParent.frmMembers.Show();
     }
 
-    private void txtEmail_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+    private void txtEmail_KeyDown(object sender, KeyEventArgs e)
     {
-        txtEmail.txtbox_Validating(lbEmail, errorEmailProvider, e);
+        if (e.KeyCode == Keys.Enter)
+        {
+            btnLogin.PerformClick();
+        }
     }
 
-    private void txtPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+    private void txtPassword_KeyDown(object sender, KeyEventArgs e)
     {
-        txtPassword.txtbox_Validating(lbPassword, errorPasswordProvider, e);
+        if (e.KeyCode == Keys.Enter)
+        {
+            btnLogin.PerformClick();
+        }
     }
 }

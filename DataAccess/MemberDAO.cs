@@ -9,7 +9,7 @@ public class MemberDAO
     private static MemberDAO instance;
     public static MemberDAO Instance => instance ??= new MemberDAO();
 
-    private readonly ApplicationDbContext _context = ApplicationDbContext.Instance;
+    private ApplicationDbContext _context = ApplicationDbContext.Instance;
 
     public async Task<MemberObject> FindByIdAsync(int id)
     {
@@ -28,7 +28,7 @@ public class MemberDAO
         return user;
     }
 
-    public async Task AddAsync(MemberObject entity)
+    public async Task CreateAsync(MemberObject entity)
     {
         try
         {
