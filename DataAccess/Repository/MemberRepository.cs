@@ -7,7 +7,9 @@ public class MemberRepository : IMemberRepository
     public static MemberRepository Instance => instance ??= new MemberRepository();
     public MemberDAO dao { get; set; } = MemberDAO.Instance;
 
-    public Task<MemberObject> GetUser(string email) => dao.GetUser(email);
+    public Task CreateAsync(MemberObject member) => dao.AddAsync(member);
 
-    Task<MemberObject> IMemberRepository.GetUser(int id) => dao.GetUser(id);
+    public Task<MemberObject> FindByIdAsync(string email) => dao.FindByIdAsync(email);
+    public Task<MemberObject> FindByIdAsync(int id) => dao.FindByIdAsync(id);
+
 }

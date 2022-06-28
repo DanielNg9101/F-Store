@@ -3,6 +3,7 @@
 namespace DataAccess.Repository;
 public interface IMemberRepository
 {
-    Task<MemberObject> GetUser(int id);
-    Task<MemberObject> GetUser(string email);
+    Task<MemberObject> FindByIdAsync(int id);
+    Task<MemberObject> FindByIdAsync(string email);
+    Task CreateAsync(MemberObject member);
 }

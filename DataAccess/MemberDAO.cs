@@ -11,19 +11,13 @@ public class MemberDAO
 
     private readonly ApplicationDbContext _context = ApplicationDbContext.Instance;
 
-    public async Task<MemberObject> GetUser(int id)
+    public async Task<MemberObject> FindByIdAsync(int id)
     {
-        MemberObject user = null;
-        try
-        {
-
-            user = await _context.Members.FindAsync(id);
-        }
-        catch { }
+        MemberObject user = await _context.Members.FindAsync(id);
         return user;
     }
 
-    public async Task<MemberObject> GetUser(string email)
+    public async Task<MemberObject> FindByIdAsync(string email)
     {
         MemberObject user = null;
         try
@@ -32,5 +26,15 @@ public class MemberDAO
         }
         catch { }
         return user;
+    }
+
+    public async Task AddAsync(MemberObject entity)
+    {
+        try
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+        catch (Exception ex) { throw new Exception(ex.Message); }
     }
 }

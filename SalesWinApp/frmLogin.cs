@@ -1,8 +1,7 @@
 using BusinessObject;
-using DataAccess;
 using DataAccess.AppConfig;
-using DataAccess.Contexts;
 using DataAccess.Repository;
+using SalesWinApp.Utils;
 
 namespace SalesWinApp;
 
@@ -24,30 +23,34 @@ public partial class frmLogin : Form
 
     private async void btnLogin_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
-        {
-            MessageBox.Show("Uncorrect email or password");
-            return;
-        }
-
         if (txtEmail.Text.Equals(Admin.Email) && txtPassword.Text.Equals(Admin.Password))
         {
-            MessageBox.Show("Welcome admin");
-            Close();
+            MessageBox.Show($"Welcome {Admin.Email}");
+            Hide();
         }
 
-        MemberObject user = await _memberRepository.GetUser(txtEmail.Text);
+        MemberObject user = await _memberRepository.FindByIdAsync(txtEmail.Text);
         if (user is null)
         {
             MessageBox.Show("Account not found");
-            return;
         }
-        MessageBox.Show("Welcome admin");
-        Close();
+        MessageBox.Show($"Welcome {user.Email}");
+        Hide();
     }
 
     private void btnRegister_Click(object sender, EventArgs e)
     {
+        frmMembers frmMembers = new frmMembers();
+        frmMembers.ShowDialog();
+    }
 
+    private void txtEmail_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+        txtEmail.txtbox_Validating(errorEmailProvider, e);
+    }
+
+    private void txtPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+        txtPassword.txtbox_Validating(errorPasswordProvider, e);
     }
 }
