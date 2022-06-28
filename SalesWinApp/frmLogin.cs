@@ -23,6 +23,8 @@ public partial class frmLogin : Form
 
     private async void btnLogin_Click(object sender, EventArgs e)
     {
+        if (!ValidateChildren(ValidationConstraints.Enabled)) return;
+
         if (txtEmail.Text.Equals(Admin.Email) && txtPassword.Text.Equals(Admin.Password))
         {
             MessageBox.Show($"Welcome {Admin.Email}");
@@ -41,16 +43,16 @@ public partial class frmLogin : Form
     private void btnRegister_Click(object sender, EventArgs e)
     {
         frmMembers frmMembers = new frmMembers();
-        frmMembers.ShowDialog();
+        frmMembers.Show();
     }
 
     private void txtEmail_Validating(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        txtEmail.txtbox_Validating(errorEmailProvider, e);
+        txtEmail.txtbox_Validating(lbEmail, errorEmailProvider, e);
     }
 
     private void txtPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        txtPassword.txtbox_Validating(errorPasswordProvider, e);
+        txtPassword.txtbox_Validating(lbPassword, errorPasswordProvider, e);
     }
 }

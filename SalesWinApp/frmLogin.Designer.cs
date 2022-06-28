@@ -44,7 +44,7 @@ partial class frmLogin
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(114, 95);
+            this.lbEmail.Location = new System.Drawing.Point(143, 134);
             this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(54, 25);
@@ -54,7 +54,7 @@ partial class frmLogin
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(114, 171);
+            this.lbPassword.Location = new System.Drawing.Point(143, 210);
             this.lbPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(87, 25);
@@ -63,7 +63,7 @@ partial class frmLogin
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(270, 90);
+            this.txtEmail.Location = new System.Drawing.Point(299, 134);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(313, 31);
@@ -72,7 +72,7 @@ partial class frmLogin
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(270, 169);
+            this.txtPassword.Location = new System.Drawing.Point(299, 208);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(313, 31);
@@ -81,7 +81,7 @@ partial class frmLogin
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(282, 248);
+            this.btnLogin.Location = new System.Drawing.Point(311, 287);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(115, 36);
@@ -92,7 +92,7 @@ partial class frmLogin
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(452, 248);
+            this.btnRegister.Location = new System.Drawing.Point(481, 287);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(115, 36);
@@ -113,7 +113,7 @@ partial class frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 411);
+            this.ClientSize = new System.Drawing.Size(797, 469);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

@@ -57,7 +57,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("MemberId");
 
-                    b.ToTable("Members");
+                    b.ToTable("Members", (string)null);
 
                     b.HasData(
                         new
@@ -92,7 +92,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("BusinessObject.OrderObject", b =>
@@ -122,7 +122,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("BusinessObject.ProductObject", b =>
@@ -154,7 +154,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
 
                     b.HasData(
                         new
