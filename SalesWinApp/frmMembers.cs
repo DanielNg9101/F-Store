@@ -13,20 +13,21 @@ public partial class frmMembers : Form
     {
         InitializeComponent();
     }
-
     public void frmMembers_Load(object sender, EventArgs e)
     {
         txtPassword.PasswordChar = PASSWORD_CHAR;
         txtReenteredPassword.PasswordChar = PASSWORD_CHAR;
 
-
         BindingSource source = new BindingSource();
         source.DataSource = new MemberObject();
+
         txtEmail.DataBindings.Clear();
         txtPassword.DataBindings.Clear();
         txtCountry.DataBindings.Clear();
         txtCompanyName.DataBindings.Clear();
         txtCity.DataBindings.Clear();
+        txtReenteredPassword.Text = string.Empty;
+
 
         txtEmail.DataBindings.Add("Text", source, "Email");
         txtPassword.DataBindings.Add("Text", source, "Password");
@@ -39,7 +40,7 @@ public partial class frmMembers : Form
 
     }
 
-    public void ClearText()
+    public void ClearTextAndDataBindings()
     {
         txtEmail.Text = string.Empty;
         txtPassword.Text = string.Empty;

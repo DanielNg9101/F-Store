@@ -30,13 +30,13 @@ partial class frmMain
     {
             this.SuspendLayout();
             // 
-            // frmContainer
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1018, 540);
             this.IsMdiContainer = true;
-            this.Name = "frmContainer";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F-Store";
             this.Load += new System.EventHandler(this.frmContainer_Load);

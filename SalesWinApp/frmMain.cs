@@ -3,10 +3,17 @@
 namespace SalesWinApp;
 public partial class frmMain : Form
 {
-    public frmLogin frmLogin = new();
-    public frmMembers frmMembers = new();
+    public frmLogin frmLogin;
+    public frmMembers frmMembers;
+    public frmProducts frmProducts;
+
+    public bool isAuthorized { get; set; } = false;
     public frmMain()
     {
+        frmLogin = new();
+        frmMembers = new();
+        frmProducts = new();
+
         InitializeComponent();
     }
 
@@ -18,5 +25,8 @@ public partial class frmMain : Form
 
         frmMembers.MdiParent = this;
         frmMembers.Location = frmMembers.CenterParent(this);
+
+        frmProducts.MdiParent= this;
+        frmProducts.Location = frmProducts.CenterParent(this);
     }
 }

@@ -75,7 +75,7 @@ partial class frmLogin
             this.btnLogin.Location = new System.Drawing.Point(218, 172);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(1);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(80, 22);
+            this.btnLogin.Size = new System.Drawing.Size(80, 29);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@ partial class frmLogin
             this.btnRegister.Location = new System.Drawing.Point(337, 172);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(1);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(80, 22);
+            this.btnRegister.Size = new System.Drawing.Size(80, 29);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
