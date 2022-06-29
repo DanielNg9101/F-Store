@@ -28,92 +28,168 @@ partial class frmProductDetail
     /// </summary>
     private void InitializeComponent()
     {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbCategoryId = new System.Windows.Forms.Label();
+            this.lbProductName = new System.Windows.Forms.Label();
+            this.lbWeight = new System.Windows.Forms.Label();
+            this.lbUnitPrice = new System.Windows.Forms.Label();
+            this.lbUnitInStock = new System.Windows.Forms.Label();
+            this.txtCategoryId = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtUnitInStock = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbCategoryId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lbCategoryId.AutoSize = true;
+            this.lbCategoryId.Location = new System.Drawing.Point(66, 78);
+            this.lbCategoryId.Name = "lbCategoryId";
+            this.lbCategoryId.Size = new System.Drawing.Size(105, 25);
+            this.lbCategoryId.TabIndex = 1;
+            this.lbCategoryId.Text = "Category Id";
             // 
-            // label2
+            // lbProductName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lbProductName.AutoSize = true;
+            this.lbProductName.Location = new System.Drawing.Point(66, 146);
+            this.lbProductName.Name = "lbProductName";
+            this.lbProductName.Size = new System.Drawing.Size(126, 25);
+            this.lbProductName.TabIndex = 2;
+            this.lbProductName.Text = "Product Name";
             // 
-            // label3
+            // lbWeight
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.lbWeight.AutoSize = true;
+            this.lbWeight.Location = new System.Drawing.Point(66, 224);
+            this.lbWeight.Name = "lbWeight";
+            this.lbWeight.Size = new System.Drawing.Size(68, 25);
+            this.lbWeight.TabIndex = 3;
+            this.lbWeight.Text = "Weight";
             // 
-            // label4
+            // lbUnitPrice
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(66, 264);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.lbUnitPrice.AutoSize = true;
+            this.lbUnitPrice.Location = new System.Drawing.Point(66, 306);
+            this.lbUnitPrice.Name = "lbUnitPrice";
+            this.lbUnitPrice.Size = new System.Drawing.Size(86, 25);
+            this.lbUnitPrice.TabIndex = 4;
+            this.lbUnitPrice.Text = "Unit Price";
             // 
-            // label5
+            // lbUnitInStock
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 346);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.lbUnitInStock.AutoSize = true;
+            this.lbUnitInStock.Location = new System.Drawing.Point(66, 376);
+            this.lbUnitInStock.Name = "lbUnitInStock";
+            this.lbUnitInStock.Size = new System.Drawing.Size(112, 25);
+            this.lbUnitInStock.TabIndex = 5;
+            this.lbUnitInStock.Text = "Unit In Stock";
             // 
-            // label6
+            // txtCategoryId
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 416);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 25);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
+            this.txtCategoryId.Location = new System.Drawing.Point(265, 75);
+            this.txtCategoryId.Name = "txtCategoryId";
+            this.txtCategoryId.Size = new System.Drawing.Size(331, 31);
+            this.txtCategoryId.TabIndex = 6;
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(265, 143);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(331, 31);
+            this.txtProductName.TabIndex = 6;
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Location = new System.Drawing.Point(265, 221);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(331, 31);
+            this.txtWeight.TabIndex = 6;
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(265, 303);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(331, 31);
+            this.txtUnitPrice.TabIndex = 6;
+            // 
+            // txtUnitInStock
+            // 
+            this.txtUnitInStock.Location = new System.Drawing.Point(265, 373);
+            this.txtUnitInStock.Name = "txtUnitInStock";
+            this.txtUnitInStock.Size = new System.Drawing.Size(331, 31);
+            this.txtUnitInStock.TabIndex = 6;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(469, 464);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(112, 34);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(288, 464);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(108, 464);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 34);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 750);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(675, 544);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.txtUnitInStock);
+            this.Controls.Add(this.txtUnitPrice);
+            this.Controls.Add(this.txtWeight);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.txtCategoryId);
+            this.Controls.Add(this.lbUnitInStock);
+            this.Controls.Add(this.lbUnitPrice);
+            this.Controls.Add(this.lbWeight);
+            this.Controls.Add(this.lbProductName);
+            this.Controls.Add(this.lbCategoryId);
             this.Name = "frmProductDetail";
-            this.Text = "frmProductDetail";
+            this.Text = "s";
             this.ResumeLayout(false);
             this.PerformLayout();
 
     }
 
     #endregion
-
-    private Label label1;
-    private Label label2;
-    private Label label3;
-    private Label label4;
-    private Label label5;
-    private Label label6;
+    private Label lbCategoryId;
+    private Label lbProductName;
+    private Label lbWeight;
+    private Label lbUnitPrice;
+    private Label lbUnitInStock;
+    private TextBox txtCategoryId;
+    private TextBox txtProductName;
+    private TextBox txtWeight;
+    private TextBox txtUnitPrice;
+    private TextBox txtUnitInStock;
+    private Button btnDelete;
+    private Button btnSave;
+    private Button btnCancel;
 }
