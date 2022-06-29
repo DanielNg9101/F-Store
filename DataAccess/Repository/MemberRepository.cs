@@ -1,15 +1,12 @@
 ﻿using BusinessObject;
 
 namespace DataAccess.Repository;
-public class MemberRepository : IMemberRepository
+public class MemberRepository : GenericRepository<MemberObject>, IMemberRepository
 {
+    // implement singleton
     private static MemberRepository instance;
     public static MemberRepository Instance => instance ??= new MemberRepository();
-    public MemberDAO dao { get; set; } = MemberDAO.Instance;
 
-    public Task CreateAsync(MemberObject member) => dao.CreateAsync(member);
-
-    public Task<MemberObject> FindByIdAsync(string email) => dao.FindByIdAsync(email);
-    public Task<MemberObject> FindByIdAsync(int id) => dao.FindByIdAsync(id);
-
+    public MemberDAO MemberDAO { get; set; } = MemberDAO.Instance;
+    public Task<MemberObject> FindByEmailAsync(string email) => MemberDAO.FindByEmailAsync(email);
 }

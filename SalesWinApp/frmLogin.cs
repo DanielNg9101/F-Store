@@ -8,10 +8,13 @@ namespace SalesWinApp;
 public partial class frmLogin : Form
 {
     private const char PASSWORD_CHAR = '\u25CF';
-    public IMemberRepository _memberRepository { get; set; } = MemberRepository.Instance;
     private readonly AdminAccount Admin = AppSettings.Instance.AdminAccount;
+
+    private IMemberRepository _memberRepository;
+
     public frmLogin()
     {
+        _memberRepository = MemberRepository.Instance;
         InitializeComponent();
     }
 
@@ -22,7 +25,7 @@ public partial class frmLogin : Form
 
     private async void btnLogin_Click(object sender, EventArgs e)
     {
-        if (!txtEmail.txtbox_Validating(lbEmail, errorEmailProvider) 
+        if (!txtEmail.txtbox_Validating(lbEmail, errorEmailProvider)
             ||
             !txtPassword.txtbox_Validating(lbPassword, errorPasswordProvider))
             return;
@@ -30,23 +33,34 @@ public partial class frmLogin : Form
         if (txtEmail.Text.Equals(Admin.Email) && txtPassword.Text.Equals(Admin.Password))
         {
             MessageBox.Show($"Welcome {Admin.Email}");
+            ((frmMain)MdiParent).isAuthorized = true;// set authorized for admin
             Hide();
-        }
-
-        MemberObject user = await _memberRepository.FindByIdAsync(txtEmail.Text);
-        if (user is null)
-        {
-            MessageBox.Show("Account not found");
             return;
         }
-        MessageBox.Show($"Welcome {user.Email}");
-        Hide();
+        try
+        {
+            MemberObject user = await _memberRepository.FindByEmailAsync(txtEmail.Text);
+            if (user is null)
+            {
+                throw new Exception("Account not found");
+            }
+            if (!user.Password.Equals(txtPassword.Text))
+            {
+                throw new Exception("Incorrect email or password");
+            }
+            MessageBox.Show($"Welcome {user.Email}");
+            Hide();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void btnRegister_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        mdiParent.frmMembers.ClearText();
+        mdiParent.frmMembers.frmMembers_Load(sender, e);
         mdiParent.frmMembers.Show();
     }
 
