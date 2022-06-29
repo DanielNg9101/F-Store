@@ -35,6 +35,7 @@ public partial class frmLogin : Form
             MessageBox.Show($"Welcome {Admin.Email}");
             ((frmMain)MdiParent).isAuthorized = true;// set authorized for admin
             Hide();
+            LoadProductForm(sender, e);
             return;
         }
         try
@@ -71,8 +72,11 @@ public partial class frmLogin : Form
     private void LoadProductForm(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        mdiParent.frmProducts.frmProducts_Load(sender, e);
-        mdiParent.frmProducts.Show();
+        frmProducts frmProducts = new();
+        mdiParent.frmProducts = frmProducts;
+        FrmLayout.CenterFormFromParent(mdiParent, frmProducts);
+        frmProducts.frmProducts_Load(sender, e);
+        frmProducts.Show();
     }
 
     private void txtEmail_KeyDown(object sender, KeyEventArgs e)

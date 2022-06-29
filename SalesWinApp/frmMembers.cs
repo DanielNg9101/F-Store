@@ -81,12 +81,12 @@ public partial class frmMembers : Form
                 throw new Exception("Password must be match");
             }
             await _memberRepository.CreateAsync(entity);
-            MessageBox.Show("Register success! Click Ok to login", "Message", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MessageBox.Show("Register success! Click Ok to login", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             Hide();
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

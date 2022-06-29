@@ -34,7 +34,7 @@ public partial class frmProductDetail : Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -45,22 +45,44 @@ public partial class frmProductDetail : Form
 
     public void frmProductDetail_Load(object sender, EventArgs e)
     {
+        txtProductId.Hide();
+        if (!((frmMain)MdiParent).isAuthorized)
+        {
+            btnDelete.Enabled = false;
+        }
+        CreateDataBindingValidation();
+    }
+
+    private void CreateDataBindingValidation()
+    {
         BindingSource source = new();
         source.DataSource = new ProductObject();
 
+        txtProductId.DataBindings.Clear();
         txtCategoryId.DataBindings.Clear();
         txtProductName.DataBindings.Clear();
         txtUnitInStock.DataBindings.Clear();
         txtUnitPrice.DataBindings.Clear();
         txtWeight.DataBindings.Clear();
 
+        txtProductId.DataBindings.Add("Text", source, "ProductId");
         txtCategoryId.DataBindings.Add("Text", source, "CategoryId");
         txtProductName.DataBindings.Add("Text", source, "ProductName");
         txtUnitInStock.DataBindings.Add("Text", source, "UnitsInStock");
         txtUnitPrice.DataBindings.Add("Text", source, "UnitPrice");
         txtWeight.DataBindings.Add("Text", source, "Weight");
 
+
         productBindingSource.DataSource = null;
         productBindingSource.DataSource = source;
+    }
+
+    public void ClearText()
+    {
+        txtCategoryId.Text = string.Empty;
+        txtProductName.Text = string.Empty;
+        txtUnitInStock.Text = string.Empty;
+        txtUnitPrice.Text = string.Empty;
+        txtWeight.Text = string.Empty;
     }
 }

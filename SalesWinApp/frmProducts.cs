@@ -22,13 +22,13 @@ public partial class frmProducts : Form
         frmProductDetail.Show();
     }
 
-    private void btnDelete_Click(object sender, EventArgs e)
-    {
-        
-    }
-
     public async void frmProducts_Load(object sender, EventArgs e)
     {
+        txtProductId.ReadOnly = true;
+        if (!((frmMain)MdiParent).isAuthorized)
+        {
+            btnDelete.Enabled = false;
+        }
         await LoadProducts();
     }
 
@@ -39,12 +39,14 @@ public partial class frmProducts : Form
         BindingSource source = new BindingSource();
         source.DataSource = products;
 
+        txtProductId.DataBindings.Clear();
         txtCategoryId.DataBindings.Clear();
         txtProductName.DataBindings.Clear();
         txtUnitInStock.DataBindings.Clear();
         txtUnitPrice.DataBindings.Clear();
         txtWeight.DataBindings.Clear();
 
+        txtProductId.DataBindings.Add("Text", source, "ProductId");
         txtCategoryId.DataBindings.Add("Text", source, "CategoryId");
         txtProductName.DataBindings.Add("Text", source, "ProductName");
         txtUnitInStock.DataBindings.Add("Text", source, "UnitsInStock");
@@ -58,9 +60,6 @@ public partial class frmProducts : Form
         {
             ClearText();
             btnDelete.Enabled = false;
-        } else
-        {
-            btnDelete.Enabled = true;
         }
     }
 
@@ -74,4 +73,23 @@ public partial class frmProducts : Form
     }
 
     private void btnClose_Click(object sender, EventArgs e) => Close();
+
+    private async void btnDelete_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            var target = await _productRepository
+                .FirstOrDefaultAsync(t => t.ProductId == int.Parse(txtProductId.Text));
+            if (target is null)
+            {
+                throw new ArgumentNullException($"Product Id-{txtProductId.Text} not found");
+            }
+            await _productRepository.DeleteAsync(target);
+            await LoadProducts();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 }
