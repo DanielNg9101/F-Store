@@ -45,7 +45,7 @@ public partial class frmLogin : Form
 
     private void btnRegister_Click(object sender, EventArgs e)
     {
-        frmContainer mdiParent = (frmContainer)MdiParent;
+        frmMain mdiParent = (frmMain)MdiParent;
         mdiParent.frmMembers.ClearText();
         mdiParent.frmMembers.Show();
     }

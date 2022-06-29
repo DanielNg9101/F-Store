@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using DataAccess.Repository;
 using SalesWinApp.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesWinApp;
 public partial class frmMembers : Form
@@ -17,6 +18,25 @@ public partial class frmMembers : Form
     {
         txtPassword.PasswordChar = PASSWORD_CHAR;
         txtReenteredPassword.PasswordChar = PASSWORD_CHAR;
+
+
+        BindingSource source = new BindingSource();
+        source.DataSource = new MemberObject();
+        txtEmail.DataBindings.Clear();
+        txtPassword.DataBindings.Clear();
+        txtCountry.DataBindings.Clear();
+        txtCompanyName.DataBindings.Clear();
+        txtCity.DataBindings.Clear();
+
+        txtEmail.DataBindings.Add("Text", source, "Email");
+        txtPassword.DataBindings.Add("Text", source, "Password");
+        txtCountry.DataBindings.Add("Text", source, "Country");
+        txtCompanyName.DataBindings.Add("Text", source, "CompanyName");
+        txtCity.DataBindings.Add("Text", source, "City");
+
+        userBindingSource.DataSource = null;
+        userBindingSource.DataSource = source;
+
     }
 
     public void ClearText()
@@ -36,49 +56,15 @@ public partial class frmMembers : Form
 
     private async void btnRegister_Click(object sender, EventArgs e)
     {
-        if (
-            !(txtEmail.txtbox_Validating(lbEmail, errorEmailProvider)
-              &&
-              txtEmail.MinLength(lbEmail, errorEmailProvider, 3)
-              && txtEmail.MaxLength(lbEmail, errorEmailProvider, 100)
-              )
-            ||
-            !(txtPassword.txtbox_Validating(lbPassword, errorPasswordProvider)
-              &&
-              txtPassword.MinLength(lbPassword, errorPasswordProvider, 3)
-              &&
-              txtPassword.MaxLength(lbPassword, errorPasswordProvider, 30)
-              )
-            ||
-            !(txtReenteredPassword.txtbox_Validating(lbPassword, errorReenteredPasswordProvider)
-              &&
-              txtReenteredPassword.MinLength(lbReenteredPassword, errorReenteredPasswordProvider, 3)
-              &&
-              txtPassword.MaxLength(lbReenteredPassword, errorReenteredPasswordProvider, 30)
-              )
-            ||
-            !(txtCompanyName.txtbox_Validating(lbCompanyName, errorCompanyProvider)
-              &&
-              txtCompanyName.MinLength(lbCompanyName, errorCompanyProvider, 3)
-              &&
-              txtCompanyName.MaxLength(lbCompanyName, errorCompanyProvider, 40)
-              )
-            ||
-            !(txtCountry.txtbox_Validating(lbCountry, errorCountryProvider)
-              &&
-              txtCountry.MinLength(lbPassword, errorCountryProvider, 3)
-              &&
-              txtCountry.MaxLength(lbPassword, errorCountryProvider, 15)
-              )
-            ||
-            !(txtCity.txtbox_Validating(lbPassword, errorPasswordProvider)
-              &&
-              txtCity.MinLength(lbPassword, errorPasswordProvider, 3)
-              &&
-              txtCity.MaxLength(lbPassword, errorPasswordProvider, 15)
-              )
-            )
-            return;
+        var errors = Validations.ValidateBindingSource<MemberObject>(userBindingSource);
+        if (errors.Any())
+        {
+            foreach (ValidationResult result in errors)
+            {
+                MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
 
         try
         {

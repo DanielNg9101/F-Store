@@ -28,10 +28,20 @@ partial class frmMain
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "frmMain";
+            this.SuspendLayout();
+            // 
+            // frmContainer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.IsMdiContainer = true;
+            this.Name = "frmContainer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "F-Store";
+            this.Load += new System.EventHandler(this.frmContainer_Load);
+            this.ResumeLayout(false);
+
     }
 
     #endregion
