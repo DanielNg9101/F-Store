@@ -48,7 +48,7 @@ public partial class frmLogin : Form
             {
                 throw new Exception("Incorrect email or password");
             }
-            MessageBox.Show($"Welcome {user.Email}");
+            /*MessageBox.Show($"Welcome {user.Email}");*/
             Hide();
             LoadProductForm(sender, e);
         }

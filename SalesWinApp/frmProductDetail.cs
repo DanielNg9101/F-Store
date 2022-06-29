@@ -1,30 +1,41 @@
 ﻿using BusinessObject;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using DataAccess.Repository;
+using SalesWinApp.Utils;
 
 namespace SalesWinApp;
 public partial class frmProductDetail : Form
 {
+    private readonly IProductRepository _productRepository;
+
     public frmProductDetail()
     {
+        _productRepository = ProductRepository.Instance;
         InitializeComponent();
     }
 
-    private void btnCancel_Click(object sender, EventArgs e)
+    private void btnCancel_Click(object sender, EventArgs e) => Close();
+
+    private async void btnSave_ClickAsync(object sender, EventArgs e)
     {
-
-    }
-
-    private void btnSave_Click(object sender, EventArgs e)
-    {
-
+        try
+        {
+            ProductObject entity = (ProductObject)productBindingSource.Current;
+            var errors = Validations.ValidateBindingSource(entity, productBindingSource);
+            if (errors.Any())
+            {
+                foreach (var result in errors)
+                {
+                    throw new ArgumentException(result.ErrorMessage);
+                }
+            }
+            await _productRepository.CreateAsync(entity);
+            Hide();
+            await ((frmMain)MdiParent).frmProducts.LoadProducts();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
