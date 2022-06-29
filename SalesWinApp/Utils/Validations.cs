@@ -30,4 +30,13 @@ public static class Validations
         Validator.TryValidateObject(entity, context, errors, true);
         return errors;
     }
+
+    public static IList<ValidationResult> ValidateBindingSource<T>(T entity, BindingSource source)
+    {
+        source.EndEdit();
+        ValidationContext context = new ValidationContext(entity, null, null);
+        IList<ValidationResult> errors = new List<ValidationResult>();
+        Validator.TryValidateObject(entity, context, errors, true);
+        return errors;
+    }
 }

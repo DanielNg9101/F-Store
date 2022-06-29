@@ -59,13 +59,18 @@ public partial class frmMembers : Form
     {
         try
         {
-            var errors = Validations.ValidateBindingSource<MemberObject>(userBindingSource);
+            MemberObject entity = (MemberObject)userBindingSource.Current;
+            bool isExist = (await _memberRepository.FindByEmailAsync(entity.Email)) != null;
+            if (isExist)
+            {
+                throw new Exception($"{entity.Email} has already exist");
+            }
+
+            var errors = Validations.ValidateBindingSource(entity,userBindingSource);
             if (errors.Any())
             {
                 foreach (ValidationResult result in errors)
                 {
-                    /*MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;*/
                     throw new ArgumentException(result.ErrorMessage);
                 }
             }
@@ -74,15 +79,6 @@ public partial class frmMembers : Form
             {
                 throw new Exception("Password must be match");
             }
-
-            MemberObject entity = new MemberObject
-            {
-                Email = txtEmail.Text,
-                CompanyName = lbCompanyName.Text,
-                City = lbCity.Text,
-                Country = lbCountry.Text,
-                Password = txtPassword.Text,
-            };
             await _memberRepository.CreateAsync(entity);
             MessageBox.Show("Register success! Click Ok to login", "Message", MessageBoxButtons.OK, MessageBoxIcon.None);
             Hide();
