@@ -56,18 +56,24 @@ public partial class frmMembers : Form
 
     private async void btnRegister_Click(object sender, EventArgs e)
     {
-        var errors = Validations.ValidateBindingSource<MemberObject>(userBindingSource);
-        if (errors.Any())
-        {
-            foreach (ValidationResult result in errors)
-            {
-                MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
-
         try
         {
+            var errors = Validations.ValidateBindingSource<MemberObject>(userBindingSource);
+            if (errors.Any())
+            {
+                foreach (ValidationResult result in errors)
+                {
+                    /*MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;*/
+                    throw new ArgumentException(result.ErrorMessage);
+                }
+            }
+
+            if (!txtPassword.Text.Equals(txtReenteredPassword.Text))
+            {
+                throw new Exception("Password must be match");
+            }
+
             MemberObject entity = new MemberObject
             {
                 Email = txtEmail.Text,
@@ -77,12 +83,13 @@ public partial class frmMembers : Form
                 Password = txtPassword.Text,
             };
             await _memberRepository.CreateAsync(entity);
-            MessageBox.Show("Register success! Click Ok to login");
+            MessageBox.Show("Register success! Click Ok to login", "Message", MessageBoxButtons.OK, MessageBoxIcon.None);
             Hide();
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message);
+            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }
