@@ -50,6 +50,7 @@ public partial class frmLogin : Form
             }
             MessageBox.Show($"Welcome {user.Email}");
             Hide();
+            LoadProductForm(sender, e);
         }
         catch (Exception ex)
         {
@@ -60,8 +61,18 @@ public partial class frmLogin : Form
     private void btnRegister_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        mdiParent.frmMembers.frmMembers_Load(sender, e);
-        mdiParent.frmMembers.Show();
+        frmMembers frmRegister = new frmMembers();
+        mdiParent.frmMembers = frmRegister;
+        FrmLayout.CenterFormFromParent(mdiParent, frmRegister);
+        frmRegister.frmMembers_Load(sender, e);
+        frmRegister.Show();
+    }
+
+    private void LoadProductForm(object sender, EventArgs e)
+    {
+        frmMain mdiParent = (frmMain)MdiParent;
+        mdiParent.frmProducts.frmProducts_Load(sender, e);
+        mdiParent.frmProducts.Show();
     }
 
     private void txtEmail_KeyDown(object sender, KeyEventArgs e)

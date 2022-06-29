@@ -6,6 +6,7 @@ public partial class frmMain : Form
     public frmLogin frmLogin;
     public frmMembers frmMembers;
     public frmProducts frmProducts;
+    public frmProductDetail frmProductDetail;
 
     public bool isAuthorized { get; set; } = false;
     public frmMain()
@@ -13,20 +14,19 @@ public partial class frmMain : Form
         frmLogin = new();
         frmMembers = new();
         frmProducts = new();
+        frmProductDetail = new();
 
         InitializeComponent();
     }
 
     private void frmContainer_Load(object sender, EventArgs e)
     {
-        frmLogin.MdiParent = this;
-        frmLogin.Location = frmLogin.CenterParent(this);
+        FrmLayout.CenterFormFromParent(this, frmLogin);
         frmLogin.Show();
 
-        frmMembers.MdiParent = this;
-        frmMembers.Location = frmMembers.CenterParent(this);
-
-        frmProducts.MdiParent= this;
-        frmProducts.Location = frmProducts.CenterParent(this);
+        FrmLayout.CenterFormFromParent(this, frmMembers);
+        FrmLayout.CenterFormFromParent(this, frmProducts);
+        FrmLayout.CenterFormFromParent(this, frmProductDetail);
+        FrmLayout.CenterFormFromParent(this, frmLogin);
     }
 }
