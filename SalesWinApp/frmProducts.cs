@@ -1,9 +1,10 @@
 ﻿using DataAccess.Contexts;
+using DataAccess.Repository;
 
 namespace SalesWinApp;
 public partial class frmProducts : Form
 {
-    private readonly ApplicationDbContext _context = ApplicationDbContext.Instance;
+    //private readonly IProductRepository _productRepository = ProductRepository.
     public frmProducts()
     {
         InitializeComponent();
@@ -20,6 +21,11 @@ public partial class frmProducts : Form
     }
 
     private void frmProducts_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void LoadProducts()
     {
 
     }

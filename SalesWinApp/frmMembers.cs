@@ -7,7 +7,7 @@ namespace SalesWinApp;
 public partial class frmMembers : Form
 {
     private const char PASSWORD_CHAR = '\u25CF';
-    private readonly IMemberRepository _memberRepository = MemberRepository.Instance;
+    private readonly IMemberRepository _memberRepository = (IMemberRepository)MemberRepository.Instance;
 
     public frmMembers()
     {

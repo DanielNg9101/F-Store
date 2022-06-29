@@ -33,7 +33,7 @@ public partial class frmLogin : Form
             Hide();
         }
 
-        MemberObject user = await _memberRepository.FindByIdAsync(txtEmail.Text);
+        MemberObject user = await _memberRepository.FindByEmailAsync(txtEmail.Text);
         if (user is null)
         {
             MessageBox.Show("Account not found");

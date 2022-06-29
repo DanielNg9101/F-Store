@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\dacng\\.nuget\\packages\\": {}
+    "C:\\Users\\Daniel NG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj",
-      "packagesPath": "C:\\Users\\dacng\\.nuget\\packages\\",
-      "outputPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\BusinessObject\\obj\\",
+      "projectPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj",
+      "packagesPath": "C:\\Users\\Daniel NG\\.nuget\\packages\\",
+      "outputPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dacng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Daniel NG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +28,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -60,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
