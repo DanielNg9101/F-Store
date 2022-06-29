@@ -87,7 +87,6 @@ public partial class frmMembers : Form
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
         }
     }
 }

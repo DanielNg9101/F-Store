@@ -27,12 +27,12 @@ public partial class frmProducts : Form
         
     }
 
-    public void frmProducts_Load(object sender, EventArgs e)
+    public async void frmProducts_Load(object sender, EventArgs e)
     {
-        LoadProducts();
+        await LoadProducts();
     }
 
-    private async void LoadProducts()
+    public async Task LoadProducts()
     {
         var products = await _productRepository.ToListAsync();
 
