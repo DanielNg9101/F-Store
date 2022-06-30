@@ -43,19 +43,7 @@ partial class frmRegister
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.errorEmailProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorPasswordProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorReenteredPasswordProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorCompanyProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorCityProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorCountryProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorEmailProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPasswordProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorReenteredPasswordProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCompanyProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCityProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCountryProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +110,7 @@ partial class frmRegister
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(225, 298);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(78, 30);
             this.btnRegister.TabIndex = 7;
@@ -133,7 +121,7 @@ partial class frmRegister
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(338, 298);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(78, 30);
             this.btnLogin.TabIndex = 8;
@@ -144,7 +132,7 @@ partial class frmRegister
             // txtReenteredPassword
             // 
             this.txtReenteredPassword.Location = new System.Drawing.Point(189, 128);
-            this.txtReenteredPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReenteredPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtReenteredPassword.Name = "txtReenteredPassword";
             this.txtReenteredPassword.Size = new System.Drawing.Size(269, 23);
             this.txtReenteredPassword.TabIndex = 3;
@@ -152,7 +140,7 @@ partial class frmRegister
             // txtCompanyName
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(189, 168);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(269, 23);
             this.txtCompanyName.TabIndex = 4;
@@ -160,7 +148,7 @@ partial class frmRegister
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(189, 208);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(269, 23);
             this.txtCity.TabIndex = 5;
@@ -168,7 +156,7 @@ partial class frmRegister
             // txtCountry
             // 
             this.txtCountry.Location = new System.Drawing.Point(189, 254);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCountry.Margin = new System.Windows.Forms.Padding(2);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(269, 23);
             this.txtCountry.TabIndex = 6;
@@ -176,7 +164,7 @@ partial class frmRegister
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(189, 83);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(269, 23);
             this.txtPassword.TabIndex = 2;
@@ -184,36 +172,12 @@ partial class frmRegister
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(189, 39);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(269, 23);
             this.txtEmail.TabIndex = 1;
             // 
-            // errorEmailProvider
-            // 
-            this.errorEmailProvider.ContainerControl = this;
-            // 
-            // errorPasswordProvider
-            // 
-            this.errorPasswordProvider.ContainerControl = this;
-            // 
-            // errorReenteredPasswordProvider
-            // 
-            this.errorReenteredPasswordProvider.ContainerControl = this;
-            // 
-            // errorCompanyProvider
-            // 
-            this.errorCompanyProvider.ContainerControl = this;
-            // 
-            // errorCityProvider
-            // 
-            this.errorCityProvider.ContainerControl = this;
-            // 
-            // errorCountryProvider
-            // 
-            this.errorCountryProvider.ContainerControl = this;
-            // 
-            // frmMembers
+            // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,17 +196,11 @@ partial class frmRegister
             this.Controls.Add(this.lbReenteredPassword);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmMembers";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.Load += new System.EventHandler(this.frmMembers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorEmailProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPasswordProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorReenteredPasswordProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCompanyProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCityProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorCountryProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,11 +223,5 @@ partial class frmRegister
     private TextBox txtCountry;
     private TextBox txtPassword;
     private TextBox txtEmail;
-    private ErrorProvider errorEmailProvider;
-    private ErrorProvider errorPasswordProvider;
-    private ErrorProvider errorReenteredPasswordProvider;
-    private ErrorProvider errorCompanyProvider;
-    private ErrorProvider errorCityProvider;
-    private ErrorProvider errorCountryProvider;
     private BindingSource userBindingSource;
 }

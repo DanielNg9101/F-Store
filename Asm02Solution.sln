@@ -15,10 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObject", "BusinessO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesWinApp", "SalesWinApp\SalesWinApp.csproj", "{BC22B080-062E-45FB-BF1D-DFDB9AE3A073}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E4605093-56CC-498C-A4F6-6CE4DA4ACBE5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataAccess", "TestDataAccess\TestDataAccess.csproj", "{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +33,6 @@ Global
 		{BC22B080-062E-45FB-BF1D-DFDB9AE3A073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC22B080-062E-45FB-BF1D-DFDB9AE3A073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC22B080-062E-45FB-BF1D-DFDB9AE3A073}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,7 +41,6 @@ Global
 		{4E4C27D5-DCBF-4619-BB97-68CB44BE11D4} = {1760DBF5-9564-408B-AA69-089F8656B5BD}
 		{1B6F0818-CFE6-47C7-AB5B-F2C7712BD092} = {633DFDDD-60E0-4FAF-9667-50267FA19DA0}
 		{BC22B080-062E-45FB-BF1D-DFDB9AE3A073} = {CEFA881A-71F4-496E-8993-3069685A42B1}
-		{FCCE8E19-56EE-4F7D-B172-B58F77F6DAD4} = {E4605093-56CC-498C-A4F6-6CE4DA4ACBE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFB89202-0B9D-4B6F-9585-8DCA40DB3E17}

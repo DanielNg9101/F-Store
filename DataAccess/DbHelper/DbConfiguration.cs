@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DataAccess.AppConfig;
+using Microsoft.Extensions.Configuration;
 
-namespace DataAccess.AppConfig;
+namespace DataAccess.DbHelper;
 public class DbConfiguration
 {
     public static class ConfigurationHelper

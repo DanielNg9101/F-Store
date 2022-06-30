@@ -1,4 +1,4 @@
-﻿using static DataAccess.AppConfig.DbConfiguration;
+﻿using static DataAccess.DbHelper.DbConfiguration;
 
 namespace DataAccess.AppConfig;
 public class AppSettings
