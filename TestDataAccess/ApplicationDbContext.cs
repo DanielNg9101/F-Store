@@ -19,8 +19,8 @@ public class ApplicationDbContext : DbContext
         optionsBuilder.UseSqlServer(connectionStrings["DefaultConnection"]);
     }
 
-    public DbSet<MemberObject> Members { get; set; }
-    public DbSet<OrderObject> Orders { get; set; }
-    public DbSet<OrderDetailObject> OrderDetails { get; set; }
-    public DbSet<ProductObject> Products { get; set; }
+    public DbSet<Member> Members { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderDetail> OrderDetails { get; set; }
+    public DbSet<Product> Products { get; set; }
 }

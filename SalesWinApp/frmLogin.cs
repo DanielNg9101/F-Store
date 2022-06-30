@@ -10,11 +10,12 @@ public partial class frmLogin : Form
     private const char PASSWORD_CHAR = '\u25CF';
     private readonly AdminAccount Admin = AppSettings.Instance.AdminAccount;
 
-    private IMemberRepository _memberRepository;
+    private readonly IGenericRepository<Member> _memberRepository;
+
 
     public frmLogin()
     {
-        _memberRepository = MemberRepository.Instance;
+        _memberRepository = GenericRepository<Member>.Instance;
         InitializeComponent();
     }
 
@@ -40,7 +41,7 @@ public partial class frmLogin : Form
         }
         try
         {
-            MemberObject user = await _memberRepository.FindByEmailAsync(txtEmail.Text);
+            Member user = await _memberRepository.FirstOrDefaultAsync(x => x.Email == txtEmail.Text);
             if (user is null)
             {
                 throw new Exception("Account not found");

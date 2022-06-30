@@ -7,11 +7,11 @@ namespace SalesWinApp;
 public partial class frmRegister : Form
 {
     private const char PASSWORD_CHAR = '\u25CF';
-    private readonly IMemberRepository _memberRepository;
+    private readonly IGenericRepository<Member> _memberRepository;
 
     public frmRegister()
     {
-        _memberRepository = MemberRepository.Instance;
+        _memberRepository = GenericRepository<Member>.Instance;
         InitializeComponent();
     }
     public void frmMembers_Load(object sender, EventArgs e)
@@ -20,7 +20,7 @@ public partial class frmRegister : Form
         txtReenteredPassword.PasswordChar = PASSWORD_CHAR;
 
         BindingSource source = new BindingSource();
-        source.DataSource = new MemberObject();
+        source.DataSource = new Member();
 
         txtEmail.DataBindings.Clear();
         txtPassword.DataBindings.Clear();
@@ -60,20 +60,20 @@ public partial class frmRegister : Form
     {
         try
         {
-            MemberObject entity = (MemberObject)userBindingSource.Current;
-            bool isExist = (await _memberRepository.FindByEmailAsync(entity.Email)) != null;
-            if (isExist)
-            {
-                throw new Exception($"{entity.Email} has already exist");
-            }
-
-            var errors = Validations.ValidateBindingSource(entity,userBindingSource);
+            Member entity = (Member)userBindingSource.Current;
+            var errors = Validations.ValidateBindingSource(entity, userBindingSource);
             if (errors.Any())
             {
                 foreach (ValidationResult result in errors)
                 {
                     throw new ArgumentException(result.ErrorMessage);
                 }
+            }
+
+            bool isExist = (await _memberRepository.FirstOrDefaultAsync(x => x.Email == entity.Email)) != null;
+            if (isExist)
+            {
+                throw new Exception($"{entity.Email} has already exist");
             }
 
             if (!txtPassword.Text.Equals(txtReenteredPassword.Text))
