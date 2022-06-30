@@ -1,23 +1,22 @@
 ﻿using BusinessObject;
-using DataAccess.Contexts;
 using DataAccess.Repository;
 using SalesWinApp.Utils;
 
 namespace SalesWinApp;
 public partial class frmProducts : Form
 {
-    private readonly IProductRepository _productRepository;
+    private readonly IGenericRepository<Product> _productRepository;
     private BindingSource source;
     public frmProducts()
     {
-        _productRepository = ProductRepository.Instance;
+        _productRepository = GenericRepository<Product>.Instance;
         InitializeComponent();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        frmProductDetail frmProductDetail = new() { Product = new ProductObject() };
+        frmProductDetail frmProductDetail = new() { Product = new Product() };
         frmProductDetail.HideFieldsWhenAdding();
         mdiParent.frmProductDetail = frmProductDetail;
         FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);
@@ -48,7 +47,7 @@ public partial class frmProducts : Form
         txtUnitPrice.DataBindings.Clear();
         txtWeight.DataBindings.Clear();
 
-        txtProductId.DataBindings.Add("Text", source, "ProductId");
+        txtProductId.DataBindings.Add("Text", source, "Id");
         txtCategoryId.DataBindings.Add("Text", source, "CategoryId");
         txtProductName.DataBindings.Add("Text", source, "ProductName");
         txtUnitInStock.DataBindings.Add("Text", source, "UnitsInStock");
@@ -91,7 +90,7 @@ public partial class frmProducts : Form
     public async Task DeleteProduct(int id)
     {
         var target = await _productRepository
-            .FirstOrDefaultAsync(t => t.ProductId == id);
+            .FirstOrDefaultAsync(t => t.Id == id);
         if (target is null)
         {
             throw new ArgumentNullException($"Product Id-{txtProductId.Text} not found");
@@ -105,7 +104,7 @@ public partial class frmProducts : Form
         frmMain mdiParent = (frmMain)MdiParent;
         frmProductDetail frmProductDetail = new()
         {
-            Product = (ProductObject)source.Current
+            Product = (Product)source.Current
         };
         mdiParent.frmProductDetail = frmProductDetail;
         FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);

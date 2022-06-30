@@ -5,12 +5,12 @@ using SalesWinApp.Utils;
 namespace SalesWinApp;
 public partial class frmProductDetail : Form
 {
-    private readonly IProductRepository _productRepository;
-    public ProductObject Product;
+    private readonly IGenericRepository<Product> _productRepository;
+    public Product Product;
 
     public frmProductDetail()
     {
-        _productRepository = ProductRepository.Instance;
+        _productRepository = GenericRepository<Product>.Instance;
         InitializeComponent();
     }
 
@@ -20,7 +20,7 @@ public partial class frmProductDetail : Form
     {
         try
         {
-            ProductObject entity = (ProductObject)productBindingSource.Current;
+            Product entity = (Product)productBindingSource.Current;
             var errors = Validations.ValidateBindingSource(entity, productBindingSource);
             if (errors.Any())
             {
@@ -75,7 +75,7 @@ public partial class frmProductDetail : Form
         txtUnitPrice.DataBindings.Clear();
         txtWeight.DataBindings.Clear();
 
-        txtProductId.DataBindings.Add("Text", source, "ProductId");
+        txtProductId.DataBindings.Add("Text", source, "Id");
         txtCategoryId.DataBindings.Add("Text", source, "CategoryId");
         txtProductName.DataBindings.Add("Text", source, "ProductName");
         txtUnitInStock.DataBindings.Add("Text", source, "UnitsInStock");

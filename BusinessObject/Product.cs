@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessObject;
-public class ProductObject
+public class Product : BaseEntity
 {
-    [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int ProductId { get; set; }
+/*    [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int ProductId { get; set; }*/
     [Required]
     public int CategoryId { get; set; }
     [Required, MaxLength(40)]

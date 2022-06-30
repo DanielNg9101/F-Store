@@ -9,4 +9,5 @@ public interface IGenericRepository<T> where T : class
     Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
     Task<IList<T>> WhereAsync(Expression<Func<T, bool>> predicate, params string[] navigationProperties);
     Task DeleteAsync(T entity);
+    Task UpsertAsync(T entity);
 }
