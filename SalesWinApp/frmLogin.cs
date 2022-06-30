@@ -35,6 +35,7 @@ public partial class frmLogin : Form
             MessageBox.Show($"Welcome {Admin.Email}");
             ((frmMain)MdiParent).isAuthorized = true;// set authorized for admin
             Hide();
+            LoadProductForm();
             return;
         }
         try
@@ -50,7 +51,7 @@ public partial class frmLogin : Form
             }
             /*MessageBox.Show($"Welcome {user.Email}");*/
             Hide();
-            LoadProductForm(sender, e);
+            LoadProductForm();
         }
         catch (Exception ex)
         {
@@ -61,18 +62,19 @@ public partial class frmLogin : Form
     private void btnRegister_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        frmMembers frmRegister = new frmMembers();
+        frmRegister frmRegister = new frmRegister();
         mdiParent.frmMembers = frmRegister;
         FrmLayout.CenterFormFromParent(mdiParent, frmRegister);
-        frmRegister.frmMembers_Load(sender, e);
         frmRegister.Show();
     }
 
-    private void LoadProductForm(object sender, EventArgs e)
+    private void LoadProductForm()
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        mdiParent.frmProducts.frmProducts_Load(sender, e);
-        mdiParent.frmProducts.Show();
+        frmProducts frmProducts = new();
+        mdiParent.frmProducts = frmProducts;
+        FrmLayout.CenterFormFromParent(mdiParent, frmProducts);
+        frmProducts.Show();
     }
 
     private void txtEmail_KeyDown(object sender, KeyEventArgs e)

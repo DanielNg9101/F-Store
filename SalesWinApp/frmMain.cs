@@ -1,10 +1,11 @@
-﻿using SalesWinApp.Utils;
+﻿using BusinessObject;
+using SalesWinApp.Utils;
 
 namespace SalesWinApp;
 public partial class frmMain : Form
 {
     public frmLogin frmLogin;
-    public frmMembers frmMembers;
+    public frmRegister frmMembers;
     public frmProducts frmProducts;
     public frmProductDetail frmProductDetail;
 
@@ -14,7 +15,7 @@ public partial class frmMain : Form
         frmLogin = new();
         frmMembers = new();
         frmProducts = new();
-        frmProductDetail = new();
+        frmProductDetail = new frmProductDetail { Product = new ProductObject() };
 
         InitializeComponent();
     }

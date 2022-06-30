@@ -1,6 +1,6 @@
 ﻿namespace SalesWinApp;
 
-partial class frmMembers
+partial class frmRegister
 {
     /// <summary>
     /// Required designer variable.

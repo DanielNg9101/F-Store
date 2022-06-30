@@ -111,7 +111,6 @@ D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\bin\Debug\net6.0-windows\DataAcce
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.AssemblyReference.cache
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmLogin.resources
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMain.resources
-D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMembers.resources
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrders.resources
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProducts.resources
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.GenerateResource.cache
@@ -128,3 +127,4 @@ D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\ref\Sale
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Binder.dll
 D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\bin\Debug\net6.0-windows\appsettings.json
 D:\FPT\CN5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProductDetail.resources
+D:\fpt\cn5\.net\assignment\F-Store\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmRegister.resources

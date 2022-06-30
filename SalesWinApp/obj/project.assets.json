@@ -2232,19 +2232,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Daniel NG\\.nuget\\packages\\": {}
+    "C:\\Users\\dacng\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\SalesWinApp\\SalesWinApp.csproj",
+      "projectUniqueName": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\SalesWinApp\\SalesWinApp.csproj",
       "projectName": "SalesWinApp",
-      "projectPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\SalesWinApp\\SalesWinApp.csproj",
-      "packagesPath": "C:\\Users\\Daniel NG\\.nuget\\packages\\",
-      "outputPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\SalesWinApp\\obj\\",
+      "projectPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\SalesWinApp\\SalesWinApp.csproj",
+      "packagesPath": "C:\\Users\\dacng\\.nuget\\packages\\",
+      "outputPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\SalesWinApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Daniel NG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dacng\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2252,18 +2252,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj"
+            "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\BusinessObject\\BusinessObject.csproj"
             },
-            "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\FPT\\CN5\\.net\\assignment\\F-Store\\DataAccess\\DataAccess.csproj"
+            "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\fpt\\cn5\\.net\\assignment\\F-Store\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -2303,7 +2302,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

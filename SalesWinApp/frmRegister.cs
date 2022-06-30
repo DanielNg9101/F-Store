@@ -4,12 +4,12 @@ using SalesWinApp.Utils;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalesWinApp;
-public partial class frmMembers : Form
+public partial class frmRegister : Form
 {
     private const char PASSWORD_CHAR = '\u25CF';
     private readonly IMemberRepository _memberRepository;
 
-    public frmMembers()
+    public frmRegister()
     {
         _memberRepository = MemberRepository.Instance;
         InitializeComponent();
@@ -81,12 +81,12 @@ public partial class frmMembers : Form
                 throw new Exception("Password must be match");
             }
             await _memberRepository.CreateAsync(entity);
-            MessageBox.Show("Register success! Click Ok to login", "Message", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MessageBox.Show("Register success! Click Ok to login", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             Hide();
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
