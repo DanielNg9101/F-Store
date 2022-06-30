@@ -35,7 +35,7 @@ public partial class frmLogin : Form
             MessageBox.Show($"Welcome {Admin.Email}");
             ((frmMain)MdiParent).isAuthorized = true;// set authorized for admin
             Hide();
-            LoadProductForm(sender, e);
+            LoadProductForm();
             return;
         }
         try
@@ -51,7 +51,7 @@ public partial class frmLogin : Form
             }
             /*MessageBox.Show($"Welcome {user.Email}");*/
             Hide();
-            LoadProductForm(sender, e);
+            LoadProductForm();
         }
         catch (Exception ex)
         {
@@ -65,17 +65,15 @@ public partial class frmLogin : Form
         frmMembers frmRegister = new frmMembers();
         mdiParent.frmMembers = frmRegister;
         FrmLayout.CenterFormFromParent(mdiParent, frmRegister);
-        frmRegister.frmMembers_Load(sender, e);
         frmRegister.Show();
     }
 
-    private void LoadProductForm(object sender, EventArgs e)
+    private void LoadProductForm()
     {
         frmMain mdiParent = (frmMain)MdiParent;
         frmProducts frmProducts = new();
         mdiParent.frmProducts = frmProducts;
         FrmLayout.CenterFormFromParent(mdiParent, frmProducts);
-        frmProducts.frmProducts_Load(sender, e);
         frmProducts.Show();
     }
 

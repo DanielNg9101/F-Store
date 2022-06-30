@@ -6,6 +6,7 @@ namespace SalesWinApp;
 public partial class frmProducts : Form
 {
     private readonly IProductRepository _productRepository;
+    private BindingSource source;
     public frmProducts()
     {
         _productRepository = ProductRepository.Instance;
@@ -36,7 +37,7 @@ public partial class frmProducts : Form
     {
         var products = await _productRepository.ToListAsync();
 
-        BindingSource source = new BindingSource();
+        source = new BindingSource();
         source.DataSource = products;
 
         txtProductId.DataBindings.Clear();
