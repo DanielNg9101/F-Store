@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessObject;
-public class OrderDetail
+public class OrderDetail : BaseEntity
 {
     [Required]
     public int OrderId { get; set; }

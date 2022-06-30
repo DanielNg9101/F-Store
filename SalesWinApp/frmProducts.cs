@@ -48,7 +48,7 @@ public partial class frmProducts : Form
         txtUnitPrice.DataBindings.Clear();
         txtWeight.DataBindings.Clear();
 
-        txtProductId.DataBindings.Add("Text", source, "ProductId");
+        txtProductId.DataBindings.Add("Text", source, "Id");
         txtCategoryId.DataBindings.Add("Text", source, "CategoryId");
         txtProductName.DataBindings.Add("Text", source, "ProductName");
         txtUnitInStock.DataBindings.Add("Text", source, "UnitsInStock");
