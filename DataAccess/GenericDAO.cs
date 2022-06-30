@@ -16,6 +16,7 @@ public class GenericDAO<T> where T : class
     {
         await dbSet.AddAsync(entity);
         await _context.SaveChangesAsync();
+        _context.ChangeTracker.Clear();
     }
 
     public virtual async Task<IList<T>> WhereAsync(Expression<Func<T, bool>> predicate, params string[] navigationProperties)
@@ -33,6 +34,7 @@ public class GenericDAO<T> where T : class
     {
         _context.Attach(updated).State = EntityState.Modified;
         await _context.SaveChangesAsync();
+        _context.ChangeTracker.Clear();
     }
 
     public Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
