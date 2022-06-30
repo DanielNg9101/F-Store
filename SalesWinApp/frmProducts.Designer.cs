@@ -158,6 +158,7 @@ partial class frmProducts
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(1353, 412);
             this.dgvProducts.TabIndex = 23;
+            this.dgvProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducts_CellMouseDoubleClick);
             // 
             // txtProductId
             // 

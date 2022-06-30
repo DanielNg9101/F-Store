@@ -1,4 +1,5 @@
-﻿using DataAccess.Contexts;
+﻿using BusinessObject;
+using DataAccess.Contexts;
 using DataAccess.Repository;
 using SalesWinApp.Utils;
 
@@ -16,10 +17,10 @@ public partial class frmProducts : Form
     private void btnAdd_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        frmProductDetail frmProductDetail = new();
+        frmProductDetail frmProductDetail = new() { Product = new ProductObject() };
+        frmProductDetail.HideFieldsWhenAdding();
         mdiParent.frmProductDetail = frmProductDetail;
         FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);
-        frmProductDetail.frmProductDetail_Load(sender, e);
         frmProductDetail.Show();
     }
 
@@ -79,18 +80,35 @@ public partial class frmProducts : Form
     {
         try
         {
-            var target = await _productRepository
-                .FirstOrDefaultAsync(t => t.ProductId == int.Parse(txtProductId.Text));
-            if (target is null)
-            {
-                throw new ArgumentNullException($"Product Id-{txtProductId.Text} not found");
-            }
-            await _productRepository.DeleteAsync(target);
-            await LoadProducts();
+            await DeleteProduct(int.Parse(txtProductId.Text));
         }
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    public async Task DeleteProduct(int id)
+    {
+        var target = await _productRepository
+            .FirstOrDefaultAsync(t => t.ProductId == id);
+        if (target is null)
+        {
+            throw new ArgumentNullException($"Product Id-{txtProductId.Text} not found");
+        }
+        await _productRepository.DeleteAsync(target);
+        await LoadProducts();
+    }
+
+    private void dgvProducts_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+    {
+        frmMain mdiParent = (frmMain)MdiParent;
+        frmProductDetail frmProductDetail = new()
+        {
+            Product = (ProductObject)source.Current
+        };
+        mdiParent.frmProductDetail = frmProductDetail;
+        FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);
+        frmProductDetail.Show();
     }
 }

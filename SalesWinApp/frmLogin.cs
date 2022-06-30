@@ -62,7 +62,7 @@ public partial class frmLogin : Form
     private void btnRegister_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        frmMembers frmRegister = new frmMembers();
+        frmRegister frmRegister = new frmRegister();
         mdiParent.frmMembers = frmRegister;
         FrmLayout.CenterFormFromParent(mdiParent, frmRegister);
         frmRegister.Show();

@@ -44,13 +44,14 @@ partial class frmProductDetail
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.txtUnitInStock = new System.Windows.Forms.MaskedTextBox();
+            this.lbProductId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCategoryId
             // 
             this.lbCategoryId.AutoSize = true;
-            this.lbCategoryId.Location = new System.Drawing.Point(66, 78);
+            this.lbCategoryId.Location = new System.Drawing.Point(88, 121);
             this.lbCategoryId.Name = "lbCategoryId";
             this.lbCategoryId.Size = new System.Drawing.Size(105, 25);
             this.lbCategoryId.TabIndex = 0;
@@ -59,7 +60,7 @@ partial class frmProductDetail
             // lbProductName
             // 
             this.lbProductName.AutoSize = true;
-            this.lbProductName.Location = new System.Drawing.Point(66, 147);
+            this.lbProductName.Location = new System.Drawing.Point(88, 190);
             this.lbProductName.Name = "lbProductName";
             this.lbProductName.Size = new System.Drawing.Size(126, 25);
             this.lbProductName.TabIndex = 0;
@@ -68,7 +69,7 @@ partial class frmProductDetail
             // lbWeight
             // 
             this.lbWeight.AutoSize = true;
-            this.lbWeight.Location = new System.Drawing.Point(66, 228);
+            this.lbWeight.Location = new System.Drawing.Point(88, 271);
             this.lbWeight.Name = "lbWeight";
             this.lbWeight.Size = new System.Drawing.Size(68, 25);
             this.lbWeight.TabIndex = 0;
@@ -77,7 +78,7 @@ partial class frmProductDetail
             // lbUnitPrice
             // 
             this.lbUnitPrice.AutoSize = true;
-            this.lbUnitPrice.Location = new System.Drawing.Point(66, 307);
+            this.lbUnitPrice.Location = new System.Drawing.Point(88, 350);
             this.lbUnitPrice.Name = "lbUnitPrice";
             this.lbUnitPrice.Size = new System.Drawing.Size(86, 25);
             this.lbUnitPrice.TabIndex = 0;
@@ -86,7 +87,7 @@ partial class frmProductDetail
             // lbUnitInStock
             // 
             this.lbUnitInStock.AutoSize = true;
-            this.lbUnitInStock.Location = new System.Drawing.Point(66, 377);
+            this.lbUnitInStock.Location = new System.Drawing.Point(88, 420);
             this.lbUnitInStock.Name = "lbUnitInStock";
             this.lbUnitInStock.Size = new System.Drawing.Size(112, 25);
             this.lbUnitInStock.TabIndex = 0;
@@ -94,35 +95,35 @@ partial class frmProductDetail
             // 
             // txtCategoryId
             // 
-            this.txtCategoryId.Location = new System.Drawing.Point(266, 75);
+            this.txtCategoryId.Location = new System.Drawing.Point(288, 118);
             this.txtCategoryId.Name = "txtCategoryId";
             this.txtCategoryId.Size = new System.Drawing.Size(331, 31);
             this.txtCategoryId.TabIndex = 1;
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(266, 143);
+            this.txtProductName.Location = new System.Drawing.Point(288, 186);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(331, 31);
             this.txtProductName.TabIndex = 2;
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(266, 222);
+            this.txtWeight.Location = new System.Drawing.Point(288, 265);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(331, 31);
             this.txtWeight.TabIndex = 3;
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(266, 303);
+            this.txtUnitPrice.Location = new System.Drawing.Point(288, 346);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(331, 31);
             this.txtUnitPrice.TabIndex = 4;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(469, 463);
+            this.btnDelete.Location = new System.Drawing.Point(491, 506);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(111, 33);
             this.btnDelete.TabIndex = 8;
@@ -132,7 +133,7 @@ partial class frmProductDetail
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(289, 463);
+            this.btnSave.Location = new System.Drawing.Point(311, 506);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 33);
             this.btnSave.TabIndex = 6;
@@ -142,7 +143,7 @@ partial class frmProductDetail
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(109, 463);
+            this.btnCancel.Location = new System.Drawing.Point(131, 506);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(111, 33);
             this.btnCancel.TabIndex = 7;
@@ -152,24 +153,35 @@ partial class frmProductDetail
             // 
             // txtProductId
             // 
-            this.txtProductId.Location = new System.Drawing.Point(266, 23);
+            this.txtProductId.Location = new System.Drawing.Point(288, 62);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(150, 31);
             this.txtProductId.TabIndex = 9;
+            this.txtProductId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtUnitInStock
             // 
-            this.txtUnitInStock.Location = new System.Drawing.Point(266, 371);
+            this.txtUnitInStock.Location = new System.Drawing.Point(288, 414);
             this.txtUnitInStock.Mask = "0000000";
             this.txtUnitInStock.Name = "txtUnitInStock";
             this.txtUnitInStock.Size = new System.Drawing.Size(331, 31);
             this.txtUnitInStock.TabIndex = 5;
             // 
+            // lbProductId
+            // 
+            this.lbProductId.AutoSize = true;
+            this.lbProductId.Location = new System.Drawing.Point(88, 65);
+            this.lbProductId.Name = "lbProductId";
+            this.lbProductId.Size = new System.Drawing.Size(95, 25);
+            this.lbProductId.TabIndex = 10;
+            this.lbProductId.Text = "Product Id";
+            // 
             // frmProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 543);
+            this.ClientSize = new System.Drawing.Size(707, 626);
+            this.Controls.Add(this.lbProductId);
             this.Controls.Add(this.txtUnitInStock);
             this.Controls.Add(this.txtProductId);
             this.Controls.Add(this.btnCancel);
@@ -209,4 +221,5 @@ partial class frmProductDetail
     private BindingSource productBindingSource;
     private TextBox txtProductId;
     private MaskedTextBox txtUnitInStock;
+    private Label lbProductId;
 }

@@ -6,6 +6,7 @@ namespace SalesWinApp;
 public partial class frmProductDetail : Form
 {
     private readonly IProductRepository _productRepository;
+    public ProductObject Product;
 
     public frmProductDetail()
     {
@@ -28,7 +29,8 @@ public partial class frmProductDetail : Form
                     throw new ArgumentException(result.ErrorMessage);
                 }
             }
-            await _productRepository.CreateAsync(entity);
+            //await _productRepository.CreateAsync(entity);
+            await _productRepository.UpsertAsync(entity);
             Hide();
             await ((frmMain)MdiParent).frmProducts.LoadProducts();
         }
@@ -37,15 +39,23 @@ public partial class frmProductDetail : Form
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
-
-    private void btnDelete_Click(object sender, EventArgs e)
+    
+    private async void btnDelete_Click(object sender, EventArgs e)
     {
-
+        try
+        {
+            await ((frmMain)MdiParent).frmProducts.DeleteProduct(int.Parse(txtProductId.Text));
+            Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     public void frmProductDetail_Load(object sender, EventArgs e)
     {
-        txtProductId.Hide();
+        txtProductId.ReadOnly = true;
         if (!((frmMain)MdiParent).isAuthorized)
         {
             btnDelete.Enabled = false;
@@ -56,7 +66,7 @@ public partial class frmProductDetail : Form
     private void CreateDataBindingValidation()
     {
         BindingSource source = new();
-        source.DataSource = new ProductObject();
+        source.DataSource = Product;
 
         txtProductId.DataBindings.Clear();
         txtCategoryId.DataBindings.Clear();
@@ -84,5 +94,11 @@ public partial class frmProductDetail : Form
         txtUnitInStock.Text = string.Empty;
         txtUnitPrice.Text = string.Empty;
         txtWeight.Text = string.Empty;
+    }
+
+    public void HideFieldsWhenAdding()
+    {
+        txtProductId.Hide();
+        lbProductId.Hide();
     }
 }

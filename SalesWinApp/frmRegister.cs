@@ -4,12 +4,12 @@ using SalesWinApp.Utils;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalesWinApp;
-public partial class frmMembers : Form
+public partial class frmRegister : Form
 {
     private const char PASSWORD_CHAR = '\u25CF';
     private readonly IMemberRepository _memberRepository;
 
-    public frmMembers()
+    public frmRegister()
     {
         _memberRepository = MemberRepository.Instance;
         InitializeComponent();

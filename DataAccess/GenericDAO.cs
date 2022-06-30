@@ -34,6 +34,7 @@ public class GenericDAO<T> where T : class
     {
         _context.Attach(updated).State = EntityState.Modified;
         await _context.SaveChangesAsync();
+        _context.ChangeTracker.Clear();
     }
 
     public Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
