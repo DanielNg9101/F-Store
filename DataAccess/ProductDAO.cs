@@ -1,13 +1,13 @@
 ﻿using BusinessObject;
 
 namespace DataAccess;
-public class ProductDAO : GenericDAO<ProductObject>
+public class ProductDAO : GenericDAO<Product>
 {
     private static ProductDAO instance;
     public static ProductDAO Instance => instance ??= new ProductDAO();
-    public virtual async Task UpsertAsync(ProductObject entity)
+    public virtual async Task UpsertAsync(Product entity)
     {
-        ProductObject target = await base.FirstOrDefaultAsync(pro => pro.ProductId == entity.ProductId);
+        Product target = await base.FirstOrDefaultAsync(pro => pro.Id == entity.Id);
         if (target is null)
         {
             await base.CreateAsync(entity);

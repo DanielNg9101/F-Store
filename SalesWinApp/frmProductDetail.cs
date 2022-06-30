@@ -6,7 +6,7 @@ namespace SalesWinApp;
 public partial class frmProductDetail : Form
 {
     private readonly IProductRepository _productRepository;
-    public ProductObject Product;
+    public Product Product;
 
     public frmProductDetail()
     {
@@ -20,7 +20,7 @@ public partial class frmProductDetail : Form
     {
         try
         {
-            ProductObject entity = (ProductObject)productBindingSource.Current;
+            Product entity = (Product)productBindingSource.Current;
             var errors = Validations.ValidateBindingSource(entity, productBindingSource);
             if (errors.Any())
             {

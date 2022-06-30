@@ -1,7 +1,7 @@
 ﻿using BusinessObject;
 
 namespace DataAccess.Repository;
-public interface IMemberRepository : IGenericRepository<MemberObject>
+public interface IMemberRepository : IGenericRepository<Member>
 {
-    Task<MemberObject> FindByEmailAsync(string email);
+    Task<Member> FindByEmailAsync(string email);
 }

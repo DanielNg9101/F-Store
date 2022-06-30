@@ -15,7 +15,7 @@ public partial class frmMain : Form
         frmLogin = new();
         frmMembers = new();
         frmProducts = new();
-        frmProductDetail = new frmProductDetail { Product = new ProductObject() };
+        frmProductDetail = new frmProductDetail { Product = new Product() };
 
         InitializeComponent();
     }

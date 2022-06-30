@@ -17,7 +17,7 @@ public partial class frmProducts : Form
     private void btnAdd_Click(object sender, EventArgs e)
     {
         frmMain mdiParent = (frmMain)MdiParent;
-        frmProductDetail frmProductDetail = new() { Product = new ProductObject() };
+        frmProductDetail frmProductDetail = new() { Product = new Product() };
         frmProductDetail.HideFieldsWhenAdding();
         mdiParent.frmProductDetail = frmProductDetail;
         FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);
@@ -91,7 +91,7 @@ public partial class frmProducts : Form
     public async Task DeleteProduct(int id)
     {
         var target = await _productRepository
-            .FirstOrDefaultAsync(t => t.ProductId == id);
+            .FirstOrDefaultAsync(t => t.Id == id);
         if (target is null)
         {
             throw new ArgumentNullException($"Product Id-{txtProductId.Text} not found");
@@ -105,7 +105,7 @@ public partial class frmProducts : Form
         frmMain mdiParent = (frmMain)MdiParent;
         frmProductDetail frmProductDetail = new()
         {
-            Product = (ProductObject)source.Current
+            Product = (Product)source.Current
         };
         mdiParent.frmProductDetail = frmProductDetail;
         FrmLayout.CenterFormFromParent(mdiParent, frmProductDetail);

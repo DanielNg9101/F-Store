@@ -4,6 +4,7 @@ using DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220630095128_RefactorDb")]
+    partial class RefactorDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,15 +71,6 @@ namespace DataAccess.Migrations
                             Country = "VN",
                             Email = "admin@fstore.com",
                             Password = "admin@@"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "HCM",
-                            CompanyName = "DanielNg",
-                            Country = "VN",
-                            Email = "a",
-                            Password = "a"
                         });
                 });
 
@@ -145,8 +138,9 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -172,7 +166,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 1,
+                            CategoryId = "1",
                             ProductName = "Axe fume",
                             UnitPrice = 130000m,
                             UnitsInStock = 20,
@@ -181,7 +175,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryId = 2,
+                            CategoryId = "2",
                             ProductName = "Lenovo Yoga Slim 7",
                             UnitPrice = 23000000m,
                             UnitsInStock = 10,
@@ -190,7 +184,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CategoryId = 2,
+                            CategoryId = "2",
                             ProductName = "Acer nitro 5",
                             UnitPrice = 21000000m,
                             UnitsInStock = 5,

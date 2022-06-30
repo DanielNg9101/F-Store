@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessObject;
-public class MemberObject
+public class Member : BaseEntity
 {
-    [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int MemberId { get; set; }
+/*    [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int MemberId { get; set; }*/
 
     [Required, MaxLength(100), EmailAddress]
     public string Email { get; set; }

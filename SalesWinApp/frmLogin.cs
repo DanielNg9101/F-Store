@@ -40,7 +40,7 @@ public partial class frmLogin : Form
         }
         try
         {
-            MemberObject user = await _memberRepository.FindByEmailAsync(txtEmail.Text);
+            Member user = await _memberRepository.FindByEmailAsync(txtEmail.Text);
             if (user is null)
             {
                 throw new Exception("Account not found");

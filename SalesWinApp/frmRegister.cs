@@ -20,7 +20,7 @@ public partial class frmRegister : Form
         txtReenteredPassword.PasswordChar = PASSWORD_CHAR;
 
         BindingSource source = new BindingSource();
-        source.DataSource = new MemberObject();
+        source.DataSource = new Member();
 
         txtEmail.DataBindings.Clear();
         txtPassword.DataBindings.Clear();
@@ -60,7 +60,7 @@ public partial class frmRegister : Form
     {
         try
         {
-            MemberObject entity = (MemberObject)userBindingSource.Current;
+            Member entity = (Member)userBindingSource.Current;
             bool isExist = (await _memberRepository.FindByEmailAsync(entity.Email)) != null;
             if (isExist)
             {

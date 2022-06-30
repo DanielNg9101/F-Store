@@ -2,14 +2,14 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessObject;
-public class OrderDetailObject
+public class OrderDetail
 {
     [Required]
     public int OrderId { get; set; }
-    public OrderObject Order { get; set; }
+    public Order Order { get; set; }
     [Required]
     public int ProductId { get; set; }
-    public ProductObject Product { get; set; }
+    public Product Product { get; set; }
     [Required, Column(TypeName = "money")]
     public double UnitPrice { get; set; }
     [Required]

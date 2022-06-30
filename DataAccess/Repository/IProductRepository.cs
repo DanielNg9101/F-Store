@@ -1,7 +1,7 @@
 ﻿using BusinessObject;
 
 namespace DataAccess.Repository;
-public interface IProductRepository : IGenericRepository<ProductObject>
+public interface IProductRepository : IGenericRepository<Product>
 {
-    Task UpsertAsync(ProductObject entity);
+    Task UpsertAsync(Product entity);
 }
