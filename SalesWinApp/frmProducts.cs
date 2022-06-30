@@ -1,16 +1,15 @@
 ﻿using BusinessObject;
-using DataAccess.Contexts;
 using DataAccess.Repository;
 using SalesWinApp.Utils;
 
 namespace SalesWinApp;
 public partial class frmProducts : Form
 {
-    private readonly IProductRepository _productRepository;
+    private readonly IGenericRepository<Product> _productRepository;
     private BindingSource source;
     public frmProducts()
     {
-        _productRepository = ProductRepository.Instance;
+        _productRepository = GenericRepository<Product>.Instance;
         InitializeComponent();
     }
 

@@ -6,20 +6,9 @@ using System.Linq.Expressions;
 namespace DataAccess.Repository;
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
 {
-    /*    protected GenericDAO<T> dao { get; set; } = GenericDAO<T>.Instance;
-
-        public async Task CreateAsync(T entity) => await dao.CreateAsync(entity);
-
-        public async Task DeleteAsync(T entity) => await dao.DeleteAsync(entity);
-
-        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate) => await dao.FirstOrDefaultAsync(predicate);
-
-        public async Task<IList<T>> ToListAsync() => await dao.ToListAsync();
-
-        public async Task UpdateAsync(T entity) => await dao.UpdateAsync(entity);
-
-        public async Task<IList<T>> WhereAsync(Expression<Func<T, bool>> predicate, params string[] navigationProperties)
-        => await dao.WhereAsync(predicate, navigationProperties);*/
+    // singleton
+    private static GenericRepository<T> instance;
+    public static GenericRepository<T> Instance => instance ??= new GenericRepository<T>();
 
     private ApplicationDbContext _context = ApplicationDbContext.Instance;
     private DbSet<T> dbSet = ApplicationDbContext.Instance.Set<T>();
@@ -63,5 +52,16 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public virtual async Task<IList<T>> ToListAsync()
     {
         return await dbSet.AsNoTracking().ToListAsync();
+    }
+
+    public virtual async Task UpsertAsync(T entity)
+    {
+        T target = await FirstOrDefaultAsync(pro => pro.Id == entity.Id);
+        if (target is null)
+        {
+            await CreateAsync(entity);
+            return;
+        }
+        await UpdateAsync(entity);
     }
 }

@@ -5,12 +5,12 @@ using SalesWinApp.Utils;
 namespace SalesWinApp;
 public partial class frmProductDetail : Form
 {
-    private readonly IProductRepository _productRepository;
+    private readonly IGenericRepository<Product> _productRepository;
     public Product Product;
 
     public frmProductDetail()
     {
-        _productRepository = ProductRepository.Instance;
+        _productRepository = GenericRepository<Product>.Instance;
         InitializeComponent();
     }
 
